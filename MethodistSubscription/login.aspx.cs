@@ -80,23 +80,23 @@ namespace MethodistSubscription
                     if (su.UserDetails != null)
                     {
                         //check if user is blocked or not
-                        bool Status = Convert.ToBoolean(su.UserDetails.Tables[0].Rows[0]["Active"].ToString());
+                        //bool Status = Convert.ToBoolean(su.UserDetails.Tables[0].Rows[0]["Active"].ToString());
 
-                        if (!Status)
-                        {
-                            lblLoginError.Text = $"User account is blocked. Please contact your administrator";
-                            return;
-                        }
+                        //if (!Status)
+                        //{
+                        //    lblLoginError.Text = $"User account is blocked. Please contact your administrator";
+                        //    return;
+                        //}
 
                         Session["userid"] = su.UserDetails.Tables[0].Rows[0]["ID"].ToString();
                         Session["username"] = su.UserDetails.Tables[0].Rows[0]["EmailAddress"].ToString();
-                        //Session["roleid"] = su.UserDetails.Tables[0].Rows[0]["RoleID"].ToString();
+                        Session["roleid"] = su.UserDetails.Tables[0].Rows[0]["RoleID"].ToString();
                         Session["userfullname"] = su.UserDetails.Tables[0].Rows[0]["FirstName"].ToString() +
                             su.UserDetails.Tables[0].Rows[0]["LastName"].ToString();
 
                         if (Session["roleid"].ToString() == "1")
                         {
-                            Response.Redirect(string.Format("Admin/dashboard"));
+                            Response.Redirect(string.Format("Admin/members-enquiries"));
                         }
                         if (Session["roleid"].ToString() == "2")
                         {

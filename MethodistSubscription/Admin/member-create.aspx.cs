@@ -26,8 +26,8 @@ namespace MethodistSubscription.Admin
                 {
                     ListItem li = new ListItem("Select a role", "0");
                     drpRole.DataSource = lp.getRoles();
-                    drpRole.DataValueField = "RoleID";
-                    drpRole.DataTextField = "RoleName";
+                    drpRole.DataValueField = "ID";
+                    drpRole.DataTextField = "Role";
                     drpRole.DataBind();
                     drpRole.Items.Insert(0, li);
                 }
@@ -81,7 +81,7 @@ namespace MethodistSubscription.Admin
                 return;
             }
             user.SaveClient(int.Parse(drpRole.SelectedValue), txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtMobile.Text, "XC4G160UbpgbPhnnnYcKfw==");
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('User successfully created');window.location ='~/Admin/members-enquiries.aspx';", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('User successfully created');window.location ='../Admin/members-enquiries.aspx';", true);
             Clear();
 
 

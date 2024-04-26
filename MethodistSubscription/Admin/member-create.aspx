@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="member-create.aspx.cs" Inherits="MethodistSubscription.Admin.member_create" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminView.Master" AutoEventWireup="true" CodeBehind="member-create.aspx.cs" Inherits="MethodistSubscription.Admin.member_create" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="main-content" class="">
     <section class="wrapper">
 
@@ -48,7 +48,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="drpRole">Role</label>
-                                            <asp:DropDownList ID="drpRole" CssClass="form-control dropdown" AutoPostBack="true" OnSelectedIndexChanged="drpRole_SelectedIndexChanged" runat="server" Style="color: black; font-weight: bold;"></asp:DropDownList>
+                                            <asp:DropDownList ID="drpRole" CssClass="form-control dropdown"  runat="server" Style="color: black; font-weight: bold;"></asp:DropDownList>
                                         </div>
 
                                     </div>

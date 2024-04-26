@@ -136,6 +136,40 @@ namespace MethodistSubscription.Models
 
 
         }
+        public void SaveSubs(int UserId, int Mode, decimal amount)
+        {
+            string constr = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
+            SqlConnection sqlCon = null;
+            using (sqlCon = new SqlConnection(constr))
+            {
+                sqlCon.Open();
+                SqlCommand sql_cmnd = new SqlCommand("sp_Save_Users", sqlCon);
+                sql_cmnd.CommandType = CommandType.StoredProcedure;
+                sql_cmnd.Parameters.AddWithValue("@UserID ", SqlDbType.Int).Value = UserId;
+                sql_cmnd.Parameters.AddWithValue("@Mode", SqlDbType.NVarChar).Value = Mode;
+                sql_cmnd.Parameters.AddWithValue("@TotalAmount", SqlDbType.Int).Value = amount;
+                sql_cmnd.ExecuteNonQuery();
+                sqlCon.Close();
+            }
+        }
+        public DataSet getTodaySubs()
+        {
+            string str = "sp_getTodaySubs";
+            System.Data.Common.DbCommand cmd = db.GetStoredProcCommand(str);
+            //db.AddInParameter(cmd, "@UserId", DbType.Int32, userId);
+            DataSet ds = db.ExecuteDataSet(cmd);
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                return ds;
+
+            }
+            else
+            {
+                return null;
+            }
+
+
+        }
         public DataSet getStats()
         {
             string str = "sp_getDashStats";

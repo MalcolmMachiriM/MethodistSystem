@@ -39,7 +39,7 @@ namespace MethodistSubscription.Admin
             if (e.CommandName == "assignrecord")
             {
                 string EcryptedID = HttpUtility.UrlEncode(qn.Encrypt(index.ToString()));
-                Response.Redirect("~/Admin/member-assign?ID=" + EcryptedID + "");
+                Response.Redirect("~/Admin/member-details?ID=" + EcryptedID + "");
             }
         }
     }

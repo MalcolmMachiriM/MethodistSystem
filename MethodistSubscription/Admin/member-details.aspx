@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="member-details.aspx.cs" Inherits="MethodistSubscription.Admin.member_details" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminView.Master" AutoEventWireup="true" CodeBehind="member-details.aspx.cs" Inherits="MethodistSubscription.Admin.member_details" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="main-content" class="">
     <section class="wrapper">
 
@@ -56,11 +56,6 @@
                                     </div>
 
                                 </div>--%>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <asp:Button ID="btnSave" runat="server" Text="Add Member" class="btn btn-success" OnClick="btnSave_Click" />
-                                    </div>
-                                </div>
 
                                 <table style="width: 100%">
                                     <tr>

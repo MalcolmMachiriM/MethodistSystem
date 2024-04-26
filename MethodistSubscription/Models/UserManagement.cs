@@ -101,7 +101,7 @@ namespace MethodistSubscription.Models
                 sql_cmnd.CommandType = CommandType.StoredProcedure;
                 sql_cmnd.Parameters.AddWithValue("@RoleID ", SqlDbType.Int).Value = RoleID;
                 sql_cmnd.Parameters.AddWithValue("@FirstName", SqlDbType.NVarChar).Value = FirstName;
-                sql_cmnd.Parameters.AddWithValue("@LastName", SqlDbType.Int).Value = LastName;
+                sql_cmnd.Parameters.AddWithValue("@LastName", SqlDbType.NVarChar).Value = LastName;
                 sql_cmnd.Parameters.AddWithValue("@EmailAddress", SqlDbType.NVarChar).Value = Email;
                 sql_cmnd.Parameters.AddWithValue("@MobileNumber", SqlDbType.NVarChar).Value = Mobile;
                 sql_cmnd.Parameters.AddWithValue("@Password", SqlDbType.NVarChar).Value = Password;
